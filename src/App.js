@@ -5,6 +5,7 @@ import RoyalFamily from "./components/RoyalFamily/RoyalFamily";
 import RoyalAssets from "./components/RoyalAssets/RoyalAssets";
 import Schedule from "./components/Schedule/Schedule";
 import Contact from "./components/Contact/Contact";
+import { MemberDetails } from "./components/MemberDetails/MemberDetails";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/assets" element={<RoyalAssets />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/members/:id" element={<MemberDetails />} />
         </Routes>
       </BrowserRouter>
     </>

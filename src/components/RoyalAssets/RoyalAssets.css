@@ -1,0 +1,80 @@
+.royal-assets-ctn {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "MedievalSharp", cursive;
+  color: white;
+}
+
+.royal-assets-title {
+  position: absolute;
+  top: 50px;
+  text-align: center;
+  margin-bottom: 450px;
+  font-size: 30px;
+  display: flex;
+}
+.table-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  border-bottom: 0.1px solid white;
+}
+
+.table-categories {
+  margin: 20px 20px 0px 20px;
+}
+
+.table-ctn {
+  border: 2px solid white;
+  border-radius: 15px;
+  position: absolute;
+  background-color: rgb(49, 49, 49, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+}
+
+.assets-table {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  border-bottom: 0.1px solid white;
+}
+
+.table-itm {
+  text-align: center;
+  border-right: 0.1px solid white;
+  padding-right: 25px;
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.crud-btns {
+  width: 80%;
+  position: absolute;
+  top: 675px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.crud-btn {
+  margin: 10px;
+  background-color: rgb(161, 157, 157, 0.4);
+  border-radius: 15px;
+  padding: 5px;
+  border: 0.2px solid white;
+  width: 40%;
+}

@@ -1,0 +1,14 @@
+.navbar {
+  background-color: #1f2225;
+}
+
+.navbar-collapse {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 125px;
+}
+
+.navbar-toggler {
+  margin-right: 15px;
+}
