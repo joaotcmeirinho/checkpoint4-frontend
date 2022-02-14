@@ -18,63 +18,130 @@
   font-size: 30px;
   display: flex;
 }
+
+.table-ctn {
+  position: relative;
+  bottom: 30px;
+  width: 80%;
+  background: rgb(46, 46, 46, 0.95);
+  -webkit-box-shadow: 6px 15px 24px -3px #000000;
+  box-shadow: 6px 15px 24px -3px #000000;
+  max-height: 60%;
+  border-radius: 7.5px;
+}
+
 .table-header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 20px;
+  justify-content: space-around;
+}
+
+.category {
+  margin: 20px 5px 15px 0px;
+  font-size: 15px;
+  padding-bottom: 5px;
   border-bottom: 0.1px solid white;
 }
 
-.table-categories {
-  margin: 20px 20px 0px 20px;
+#name {
+  position: relative;
+  right: 15px;
 }
 
-.table-ctn {
-  border: 2px solid white;
-  border-radius: 15px;
-  position: absolute;
-  background-color: rgb(49, 49, 49, 0.7);
+#quantity {
+  position: relative;
+  left: 12px;
+}
+#worth {
+  position: relative;
+  left: 42px;
+}
+
+.table-body {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  width: 90%;
+
+  max-height: 80%;
+  overflow: auto;
 }
 
-.assets-table {
+.table-row {
+  position: relative;
+  left: 3%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  margin: 20px;
-  border-bottom: 0.1px solid white;
+  justify-content: space-between;
+  padding: 10px 15px;
+  margin: 5px 35px;
 }
 
-.table-itm {
-  text-align: center;
-  border-right: 0.1px solid white;
-  padding-right: 25px;
-  display: flex;
-  flex-direction: row;
-  margin: 20px;
+.table-row-item {
+  font-size: 12px;
 }
 
 .crud-btns {
-  width: 80%;
-  position: absolute;
-  top: 675px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .crud-btn {
-  margin: 10px;
-  background-color: rgb(161, 157, 157, 0.4);
-  border-radius: 15px;
+  position: relative;
+  right: 12px;
+  background: none;
+  border: none;
   padding: 5px;
-  border: 0.2px solid white;
-  width: 40%;
+  width: 12%;
+}
+
+#edit {
+  position: relative;
+  left: 5px;
+}
+
+#delete {
+  position: relative;
+  left: 5px;
+}
+
+#add-btn {
+  background: rgb(46, 46, 46, 0.95);
+  -webkit-box-shadow: 6px 15px 24px -3px #000000;
+  box-shadow: 6px 15px 24px -3px #000000;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  #name {
+    right: 5px;
+  }
+
+  #worth {
+    left: 37px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .table-ctn {
+    width: 50%;
+  }
+
+  #name {
+    left: 5px;
+  }
+
+  #worth {
+    left: 27px;
+  }
+
+  #edit {
+    left: -50px;
+  }
+
+  #delete {
+    left: -50px;
+  }
 }

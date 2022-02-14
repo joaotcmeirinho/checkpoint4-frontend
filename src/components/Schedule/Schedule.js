@@ -1,6 +1,8 @@
 import React from "react";
 import Background from "../../assets/background.webp";
 import "./Schedule.css";
+import { IconContext } from "react-icons";
+import { IoSendSharp } from "react-icons/io5";
 
 const Schedule = () => {
   return (
@@ -34,6 +36,13 @@ const Schedule = () => {
           <label>Tell us your email</label>
           <input className="schedule-input-field" type="email" />
         </div>
+        <IconContext.Provider value={{ size: "25px", color: "white" }}>
+          <div className="schedule-form-item">
+            <button className="submit-form-btn" type="submit">
+              <IoSendSharp />
+            </button>
+          </div>
+        </IconContext.Provider>
       </div>
     </div>
   );

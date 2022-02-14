@@ -3,12 +3,12 @@
 }
 
 .navbar-collapse {
-  display: flex;
   flex-direction: column;
   text-align: center;
-  margin-right: 125px;
+  margin-left: 40px;
 }
 
 .navbar-toggler {
   margin-right: 15px;
+  width: 60px;
 }

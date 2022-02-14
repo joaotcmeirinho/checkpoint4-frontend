@@ -32,12 +32,12 @@ const RoyalFamily = () => {
       <h1 className="royal-family-title">Meet our great Royal Family</h1>
       <div className="family-ctn">
         {family.map((f) => (
-          <div className="family-member">
+          <div className="family-member" key={f.id}>
             <img className="member-img" src={f.url} alt={f.name} />
-            <div className="member-info"></div>
-            <h3>{f.name}</h3>
-            <p>{f.age} years old</p>
-
+            <div className="member-info">
+              <h3 className="member-name">{f.name}</h3>
+              <p className="member-age">{f.age} years old</p>
+            </div>
             <NavLink to={`/members/${f.id}`}>
               <button className="member-btn">Know more</button>
             </NavLink>

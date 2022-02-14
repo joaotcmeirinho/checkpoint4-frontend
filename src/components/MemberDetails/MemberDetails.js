@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import Background from "../../assets/background.webp";
 import "./MemberDetails.css";
+import { BiArrowBack } from "react-icons/bi";
+import { IconContext } from "react-icons/lib";
 
 export const MemberDetails = () => {
   const [member, setMember] = useState([]);
@@ -31,7 +33,16 @@ export const MemberDetails = () => {
       }}
       className="member-details-ctn"
     >
+      <div className="arrow">
+        <NavLink to="/members">
+          <IconContext.Provider value={{ size: "35px", color: "grey" }}>
+            <BiArrowBack />
+          </IconContext.Provider>
+        </NavLink>
+      </div>
+
       <h1 className="member-details-name">{member.name}</h1>
+
       <img className="member-details-img" src={member.url} alt={member.name} />
       <p className="member-details-desc">{member.description}</p>
     </div>

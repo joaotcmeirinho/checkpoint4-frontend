@@ -24,41 +24,59 @@
   height: 70%;
   overflow: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
 .family-member {
-  border: 2px solid white;
   border-radius: 7px;
   background-color: rgb(46, 46, 46, 0.9);
   margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 5px;
+  justify-content: space-between;
+  padding: 0px 0px;
+  width: 90%;
+  height: 92%;
+  -webkit-box-shadow: 6px 15px 24px -3px #000000;
+  box-shadow: 6px 15px 24px -3px #000000;
 }
 
 .member-img {
   width: 100%;
-  height: 70px;
+  height: 75%;
   object-fit: cover;
   border-radius: 5px;
 }
 
 .member-info {
-  margin-top: 10px;
+  position: relative;
+  top: -3px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.member-name {
+  font-size: 30px;
+  text-align: center;
 }
 
 .member-btn {
+  font-size: 17.5px;
+  position: relative;
+  top: -10px;
   background-color: rgb(161, 157, 157, 0.4);
   border-radius: 15px;
-  padding: 5px;
+  padding: 7.5px 40px;
   border: 0.2px solid white;
   text-decoration: none;
+  width: 100%;
 }
 
 p {
@@ -68,4 +86,65 @@ p {
 
 h3 {
   margin-bottom: 0px;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+  .family-ctn {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .family-member {
+    width: 25vw;
+    height: 35vh;
+    margin: 40px;
+  }
+  .member-img {
+    height: 65%;
+  }
+
+  .member-info {
+    top: -1px;
+  }
+
+  .member-name {
+    font-size: 25px;
+  }
+  .member-btn {
+    top: -5px;
+    padding: 1.5px 15px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .family-ctn {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .family-member {
+    width: 30vw;
+    height: 65vh;
+    margin: 40px;
+  }
+  .member-img {
+    height: 75%;
+  }
+
+  .member-info {
+    top: 0px;
+  }
+
+  .member-name {
+    font-size: 40px;
+  }
+  .member-btn {
+    top: -7.5px;
+    padding: 5px 35px;
+    margin-top: 7.5px;
+    width: 100%;
+    height: 40px;
+  }
 }

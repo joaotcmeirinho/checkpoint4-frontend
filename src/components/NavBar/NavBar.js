@@ -20,10 +20,18 @@ const NavBar = () => {
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="ms-auto" style={{ marginRight: "50px" }}>
-            <Nav.Link href={"/members"}>Royal Family</Nav.Link>
-            <Nav.Link href={"/assets"}>Royal Assets</Nav.Link>
-            <Nav.Link href={"/schedule"}>Schedule a visit</Nav.Link>
-            <Nav.Link href={"/contact"}>Contact Us</Nav.Link>
+            <Nav.Link style={{ margin: " 0 10px" }} href={"/members"}>
+              Royal Family
+            </Nav.Link>
+            <Nav.Link style={{ margin: " 0 10px" }} href={"/assets"}>
+              Royal Assets
+            </Nav.Link>
+            <Nav.Link style={{ margin: " 0 10px" }} href={"/schedule"}>
+              Schedule a visit
+            </Nav.Link>
+            <Nav.Link style={{ margin: " 0 10px" }} href={"/contact"}>
+              Contact Us
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

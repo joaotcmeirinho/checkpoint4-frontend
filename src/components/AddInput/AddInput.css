@@ -1,0 +1,19 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button {
+  margin-right: 50px;
+  border-radius: 100px;
+  width: 50px;
+  height: 40px;
+  border: 2px solid yellow;
+}
+
+input {
+  margin: 2px;
+  width: 50%;
+  border-radius: 15px;
+}

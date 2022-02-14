@@ -12,7 +12,7 @@
 
 .schedule-title {
   position: absolute;
-  top: 50px;
+  top: 35px;
   text-align: center;
   margin-bottom: 450px;
   font-size: 30px;
@@ -20,25 +20,26 @@
 }
 
 .winterfell-img {
-  /* object-fit: contain; */
   position: absolute;
-  top: 140px;
-  width: 80%;
-  height: 150px;
+  top: 130px;
+  width: 65%;
+  height: 185px;
   border-radius: 15px;
+  -webkit-box-shadow: 6px 15px 24px -3px #000000;
+  box-shadow: 6px 15px 24px -3px #000000;
 }
 
 .schedule-form {
   position: absolute;
-  top: 300px;
-  width: 70%;
-  height: 40%;
-  margin-top: 40px;
+  top: 290px;
+  width: 65%;
+  height: 50%;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid white;
+
   border-radius: 7px;
   background-color: rgb(46, 46, 46, 0.9);
 }
@@ -47,7 +48,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15px;
+  margin: 12px;
   width: 80%;
 }
 
@@ -56,4 +57,55 @@
   width: 100%;
   border-radius: 10px;
   padding: 5px;
+}
+
+@media screen and (max-width: 420px) {
+  .schedule-title {
+    font-size: 18px;
+  }
+  .winterfell-img {
+    top: 100px;
+    width: 75%;
+  }
+  .schedule-form {
+    top: 250px;
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+  .schedule-title {
+    font-size: 27px;
+  }
+  .winterfell-img {
+    top: 15%;
+    width: 45%;
+    height: 185px;
+  }
+  .schedule-form {
+    top: 35%;
+    width: 45%;
+    height: 50%;
+  }
+  .schedule-form-item {
+    margin: 12px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .winterfell-img {
+    top: 13%;
+    width: 45%;
+    height: 33%;
+  }
+
+  .schedule-form {
+    top: 42%;
+    width: 30%;
+    height: 40%;
+  }
+
+  .schedule-form-item {
+    margin: 5px;
+  }
 }
