@@ -19,7 +19,10 @@ const NavBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-          <Nav className="ms-auto" style={{ marginRight: "50px" }}>
+          <Nav
+            className="ms-auto"
+            style={{ marginRight: "50px", fontFamily: "MedievalSharp" }}
+          >
             <Nav.Link style={{ margin: " 0 10px" }} href={"/members"}>
               Royal Family
             </Nav.Link>

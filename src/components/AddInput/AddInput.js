@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./AddInput.css";
 
-const AddInput = ({ setInput }) => {
+const AddInput = ({ setAddModal }) => {
   const [asset, setAsset] = useState("");
   const [quantity, setQuantity] = useState("");
   const [worth, setWorth] = useState("");
@@ -15,38 +15,53 @@ const AddInput = ({ setInput }) => {
       quantity: quantity,
       worth: worth,
     });
-
     window.location.href = "/assets";
-
     console.log(response);
   };
-
   return (
-    <div className="input-wrapper">
-      <form className="input-fields" onSubmit={addAsset}>
-        <input
-          onChange={(e) => {
-            setAsset(e.target.value);
-          }}
-          placeholder="Asset"
-          type="text"
-        ></input>
-        <input
-          onChange={(e) => {
-            setQuantity(e.target.value);
-          }}
-          placeholder="Quantity"
-          type="number"
-        ></input>
-        <input
-          onChange={(e) => {
-            setWorth(e.target.value);
-          }}
-          placeholder="Worth"
-          type="number"
-        ></input>
-        <button type="submit">Add</button>
-      </form>
+    <div className="modalBackground">
+      <div className="modalContainer">
+        <div className="titleCloseBtn">
+          <button onClick={() => setAddModal(false)}> X </button>
+        </div>
+        <div className="title">
+          <h1>New Asset</h1>
+        </div>
+        <div className="body">
+          <form className="input-fields" onSubmit={addAsset}>
+            <input
+              onChange={(e) => {
+                setAsset(e.target.value);
+              }}
+              placeholder="Asset"
+              type="text"
+              className="input-field"
+              required
+            ></input>
+            <input
+              onChange={(e) => {
+                setQuantity(e.target.value);
+              }}
+              placeholder="Quantity"
+              type="number"
+              className="input-field"
+              required
+            ></input>
+            <input
+              onChange={(e) => {
+                setWorth(e.target.value);
+              }}
+              placeholder="Worth"
+              type="number"
+              className="input-field"
+              required
+            ></input>
+            <button className="add-btn" type="submit">
+              Add Asset
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

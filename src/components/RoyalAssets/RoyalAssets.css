@@ -10,6 +10,12 @@
   color: white;
 }
 
+.modal-ctn {
+  position: absolute;
+  top: 2%;
+  z-index: 1;
+}
+
 .royal-assets-title {
   position: absolute;
   top: 50px;

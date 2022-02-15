@@ -1,0 +1,14 @@
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.delete-btn {
+  position: relative;
+  bottom: 30px;
+  margin: 30px;
+  width: 60%;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 5px;
+}

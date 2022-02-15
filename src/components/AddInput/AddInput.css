@@ -1,19 +1,87 @@
-.input-wrapper {
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
-button {
-  margin-right: 50px;
-  border-radius: 100px;
-  width: 50px;
-  height: 40px;
-  border: 2px solid yellow;
+.modalContainer {
+  font-family: "MedievalSharp", cursive;
+  color: white;
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: rgb(46, 46, 46, 0.95);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
 }
 
-input {
-  margin: 2px;
-  width: 50%;
+.modalContainer .title {
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.titleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.titleCloseBtn button {
+  color: white;
+
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.titleCloseBtn button:hover {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+}
+
+.modalContainer .body {
+  position: relative;
+  bottom: 80%;
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.input-fields {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-field {
+  margin: 10px;
   border-radius: 15px;
+  padding: 5px;
+  border: none;
+}
+
+.add-btn {
+  border-radius: 15px;
+  border: none;
+  padding: 5px 25px;
+  background-color: rgba(255, 251, 251, 0.5);
+}
+
+.modalContainer .footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
