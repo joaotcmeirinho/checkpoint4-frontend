@@ -17,8 +17,6 @@ const RoyalFamily = () => {
     getFamily();
   }, []);
 
-  console.log();
-
   return (
     <div
       style={{

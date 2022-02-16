@@ -25,7 +25,8 @@ const EditPopUp = ({ setEditModal, assetId }) => {
     try {
       const response = await axios.put(
         `http://localhost:5001/api/assets/${assetId}`,
-        { name, quantity, worth }
+        { name, quantity, worth },
+        { withCredentials: true }
       );
 
       window.location.href = "/assets";

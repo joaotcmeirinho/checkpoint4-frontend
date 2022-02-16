@@ -6,21 +6,31 @@ import RoyalAssets from "./components/RoyalAssets/RoyalAssets";
 import Schedule from "./components/Schedule/Schedule";
 import Contact from "./components/Contact/Contact";
 import { MemberDetails } from "./components/MemberDetails/MemberDetails";
+import Login from "./components/Login/Login";
+import { LoginContext } from "./Helper/Context.js";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(
+    JSON.parse(sessionStorage.getItem("loggedIn", false))
+  );
+
   return (
     <>
-      <NavBar />
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<HomePage />} />
-          <Route path="/members" element={<RoyalFamily />} />
-          <Route path="/assets" element={<RoyalAssets />} />
-          <Route path="/schedule" element={<Schedule />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/members/:id" element={<MemberDetails />} />
-        </Routes>
-      </BrowserRouter>
+      <LoginContext.Provider value={{ loggedIn, setLoggedIn }}>
+        <NavBar />
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<HomePage />} />
+            <Route path="/members" element={<RoyalFamily />} />
+            <Route path="/assets" element={<RoyalAssets />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/members/:id" element={<MemberDetails />} />
+            <Route path="/admin" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
+      </LoginContext.Provider>
     </>
   );
 }

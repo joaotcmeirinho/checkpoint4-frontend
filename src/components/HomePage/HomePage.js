@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Background from "../../assets/background.webp";
 import "./HomePage.css";
+import { LoginContext } from "../../Helper/Context";
+import Hello from "../Hello/Hello";
 
 const HomePage = () => {
+  const { loggedIn, setLoggedIn } = useContext(LoginContext);
+
+  console.log(loggedIn);
+
   return (
     <div
       style={{
@@ -13,6 +19,12 @@ const HomePage = () => {
       }}
       className="home-page-ctn"
     >
+      {loggedIn && (
+        <div className="admin-ctn">
+          <Hello />
+        </div>
+      )}
+
       <h1 className="title">Welcome to Winterfell</h1>
 
       <p className="description">

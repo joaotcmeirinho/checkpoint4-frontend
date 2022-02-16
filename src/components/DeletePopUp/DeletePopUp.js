@@ -8,7 +8,8 @@ const DeletePopUp = ({ setDeleteModal, assetId }) => {
 
     try {
       const response = await axios.delete(
-        `http://localhost:5001/api/assets/${assetId}`
+        `http://localhost:5001/api/assets/${assetId}`,
+        { withCredentials: true }
       );
       window.location.href = "/assets";
       console.log(response);

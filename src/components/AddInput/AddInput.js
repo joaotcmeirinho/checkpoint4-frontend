@@ -10,11 +10,15 @@ const AddInput = ({ setAddModal }) => {
   const addAsset = async (e) => {
     e.preventDefault();
 
-    const response = await axios.post("http://localhost:5001/api/assets", {
-      name: asset,
-      quantity: quantity,
-      worth: worth,
-    });
+    const response = await axios.post(
+      "http://localhost:5001/api/assets",
+      {
+        name: asset,
+        quantity: quantity,
+        worth: worth,
+      },
+      { withCredentials: true }
+    );
     window.location.href = "/assets";
     console.log(response);
   };

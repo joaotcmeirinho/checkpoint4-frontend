@@ -10,6 +10,16 @@
   color: white;
 }
 
+.royal-family-admin-ctn {
+  position: relative;
+  bottom: 12.5%;
+  right: 38%;
+  border: 2px solid yellow;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
 .royal-family-title {
   position: absolute;
   top: 50px;

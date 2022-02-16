@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { LoginContext } from "../../Helper/Context";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import Background from "../../assets/background.webp";
@@ -10,6 +11,7 @@ import { IconContext } from "react-icons";
 import AddInput from "../AddInput/AddInput";
 import DeletePopUp from "../DeletePopUp/DeletePopUp";
 import EditPopUp from "../EditPopUp/EditPopUp";
+import Hello from "../Hello/Hello";
 
 const RoyalAssets = () => {
   const [assets, setAssets] = useState([]);
@@ -18,6 +20,8 @@ const RoyalAssets = () => {
   const [deleteModal, setDeleteModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
   const [assetId, setAssetId] = useState("");
+
+  const { loggedIn, setLoggedIn } = useContext(LoginContext);
 
   const getAssets = async () => {
     const response = await axios.get("http://localhost:5001/api/assets");
@@ -63,6 +67,12 @@ const RoyalAssets = () => {
         }}
         className="royal-assets-ctn"
       >
+        {loggedIn && (
+          <div className="royal-assets-admin-ctn">
+            <Hello />
+          </div>
+        )}
+
         <h1 className="royal-assets-title">Royal Assets</h1>
 
         <div className="table-ctn">
@@ -90,46 +100,50 @@ const RoyalAssets = () => {
                     {a.worth}
                   </p>
                   <div className="crud-btns">
-                    {/* <IconContext.Provider value={{ size: "25px" }}>
-                      <button
-                        onClick={() => {
-                          setEditModal(true);
-                          setAssetId(a.id);
-                        }}
-                        id="edit"
-                        className="crud-btn"
-                      >
-                        {<GrEdit />}
-                      </button>
+                    {loggedIn && (
+                      <IconContext.Provider value={{ size: "25px" }}>
+                        <button
+                          onClick={() => {
+                            setEditModal(true);
+                            setAssetId(a.id);
+                          }}
+                          id="edit"
+                          className="crud-btn"
+                        >
+                          {<GrEdit />}
+                        </button>
 
-                      <button
-                        onClick={() => {
-                          setDeleteModal(true);
-                          setAssetId(a.id);
-                        }}
-                        id="delete"
-                        className="crud-btn"
-                      >
-                        <RiDeleteBin5Line />
-                      </button>
-                    </IconContext.Provider> */}
+                        <button
+                          onClick={() => {
+                            setDeleteModal(true);
+                            setAssetId(a.id);
+                          }}
+                          id="delete"
+                          className="crud-btn"
+                        >
+                          <RiDeleteBin5Line />
+                        </button>
+                      </IconContext.Provider>
+                    )}
                   </div>
                 </div>
               </>
             ))}
           </div>
         </div>
-        <IconContext.Provider value={{ size: "25px", color: "white" }}>
-          <div className="crud-btns" id="add-btn">
-            <button
-              onClick={() => setAddModal(true)}
-              value="add"
-              className="crud-btn"
-            >
-              <IoIosAddCircleOutline />
-            </button>
-          </div>
-        </IconContext.Provider>
+        {loggedIn && (
+          <IconContext.Provider value={{ size: "25px", color: "white" }}>
+            <div className="crud-btns" id="add-btn">
+              <button
+                onClick={() => setAddModal(true)}
+                value="add"
+                className="crud-btn"
+              >
+                <IoIosAddCircleOutline />
+              </button>
+            </div>
+          </IconContext.Provider>
+        )}
       </div>
     </>
   );

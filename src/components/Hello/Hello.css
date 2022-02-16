@@ -1,0 +1,13 @@
+.hello-admin {
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.logout-btn {
+  width: 7vw;
+  height: 5vh;
+  border-radius: 15px;
+  border: none;
+  padding: 3px 10px;
+  background-color: rgb(34, 33, 33);
+}

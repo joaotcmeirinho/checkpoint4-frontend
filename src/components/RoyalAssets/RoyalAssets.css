@@ -16,6 +16,15 @@
   z-index: 1;
 }
 
+.royal-assets-admin-ctn {
+  position: fixed;
+  bottom: 84%;
+  right: 77.5%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
 .royal-assets-title {
   position: absolute;
   top: 50px;
