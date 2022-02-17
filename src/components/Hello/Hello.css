@@ -1,5 +1,5 @@
 .hello-admin {
-  font-size: 15px;
+  font-size: 14px;
   margin-right: 10px;
 }
 
@@ -10,4 +10,15 @@
   border: none;
   padding: 3px 10px;
   background-color: rgb(34, 33, 33);
+}
+
+.logout-btn:hover {
+  background-color: rgba(252, 252, 252, 0.8);
+  transition: background-color 0.2s ease;
+}
+
+@media screen and (min-width: 800px) {
+  .logout-btn {
+    width: 5vw;
+  }
 }

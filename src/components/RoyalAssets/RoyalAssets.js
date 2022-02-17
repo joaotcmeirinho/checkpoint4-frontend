@@ -11,7 +11,10 @@ import { IconContext } from "react-icons";
 import AddInput from "../AddInput/AddInput";
 import DeletePopUp from "../DeletePopUp/DeletePopUp";
 import EditPopUp from "../EditPopUp/EditPopUp";
-import Hello from "../Hello/Hello";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const RoyalAssets = () => {
   const [assets, setAssets] = useState([]);
@@ -21,7 +24,13 @@ const RoyalAssets = () => {
   const [editModal, setEditModal] = useState(false);
   const [assetId, setAssetId] = useState("");
 
-  const { loggedIn, setLoggedIn } = useContext(LoginContext);
+  const { loggedIn } = useContext(LoginContext);
+
+  const notify = (message) => {
+    toast.success(message, {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
+  };
 
   const getAssets = async () => {
     const response = await axios.get("http://localhost:5001/api/assets");
@@ -38,23 +47,31 @@ const RoyalAssets = () => {
   };
 
   useEffect(() => {
-    getAssets();
     getCategories();
   }, []);
+
+  useEffect(() => {
+    getAssets();
+  }, [assets]);
 
   return (
     <>
       <div className="modal-ctn">
-        {addModal && <AddInput setAddModal={setAddModal} />}
+        {addModal && <AddInput notify={notify} setAddModal={setAddModal} />}
         {editModal && (
           <EditPopUp
             assets={assets}
             assetId={assetId}
             setEditModal={setEditModal}
+            notify={notify}
           />
         )}
         {deleteModal && (
-          <DeletePopUp setDeleteModal={setDeleteModal} assetId={assetId} />
+          <DeletePopUp
+            notify={notify}
+            setDeleteModal={setDeleteModal}
+            assetId={assetId}
+          />
         )}
       </div>
 
@@ -67,12 +84,6 @@ const RoyalAssets = () => {
         }}
         className="royal-assets-ctn"
       >
-        {loggedIn && (
-          <div className="royal-assets-admin-ctn">
-            <Hello />
-          </div>
-        )}
-
         <h1 className="royal-assets-title">Royal Assets</h1>
 
         <div className="table-ctn">

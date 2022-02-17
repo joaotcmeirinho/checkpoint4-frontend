@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./AddInput.css";
 
-const AddInput = ({ setAddModal }) => {
+const AddInput = ({ setAddModal, notify }) => {
   const [asset, setAsset] = useState("");
   const [quantity, setQuantity] = useState("");
   const [worth, setWorth] = useState("");
@@ -19,8 +19,8 @@ const AddInput = ({ setAddModal }) => {
       },
       { withCredentials: true }
     );
-    window.location.href = "/assets";
-    console.log(response);
+    setAddModal(false);
+    notify(response.data);
   };
   return (
     <div className="modalBackground">

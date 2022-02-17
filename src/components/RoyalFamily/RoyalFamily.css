@@ -89,6 +89,11 @@
   width: 100%;
 }
 
+.member-btn:hover {
+  background-color: rgba(252, 252, 252, 0.8);
+  transition: background-color 0.2s ease;
+}
+
 p {
   font-size: 15px;
   margin-bottom: 0px;

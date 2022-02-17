@@ -8,11 +8,11 @@ import Contact from "./components/Contact/Contact";
 import { MemberDetails } from "./components/MemberDetails/MemberDetails";
 import Login from "./components/Login/Login";
 import { LoginContext } from "./Helper/Context.js";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(
-    JSON.parse(sessionStorage.getItem("loggedIn", false))
+    JSON.parse(localStorage.getItem("loggedIn", false))
   );
 
   return (

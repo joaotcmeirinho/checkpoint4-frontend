@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const EditPopUp = ({ setEditModal, assetId }) => {
+const EditPopUp = ({ setEditModal, assetId, notify }) => {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
   const [worth, setWorth] = useState("");
@@ -29,8 +29,8 @@ const EditPopUp = ({ setEditModal, assetId }) => {
         { withCredentials: true }
       );
 
-      window.location.href = "/assets";
-
+      setEditModal(false);
+      notify(response.data);
       console.log(response);
     } catch (err) {
       console.log(err);

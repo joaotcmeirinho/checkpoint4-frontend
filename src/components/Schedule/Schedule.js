@@ -103,7 +103,7 @@ const Schedule = () => {
           </form>
         </>
       ) : (
-        <SuccessScreen />
+        <SuccessScreen type="schedule" />
       )}
     </div>
   );

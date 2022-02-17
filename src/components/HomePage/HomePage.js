@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
+import { LoginContext } from "../../Helper/Context";
 import Background from "../../assets/background.webp";
 import "./HomePage.css";
-import { LoginContext } from "../../Helper/Context";
 import Hello from "../Hello/Hello";
 
 const HomePage = () => {
-  const { loggedIn, setLoggedIn } = useContext(LoginContext);
-
-  console.log(loggedIn);
+  const { loggedIn } = useContext(LoginContext);
 
   return (
     <div

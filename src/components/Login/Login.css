@@ -55,6 +55,11 @@
   background-color: rgb(34, 33, 33);
 }
 
+.login-btn:hover {
+  background-color: rgba(252, 252, 252, 0.8);
+  transition: background-color 0.2s ease;
+}
+
 @media screen and (min-width: 700px) and (max-width: 1000px) {
   .login-form-ctn {
     width: 50%;
@@ -80,5 +85,11 @@
 
   .login-btn {
     width: 5vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login-btn {
+    width: 35%;
   }
 }

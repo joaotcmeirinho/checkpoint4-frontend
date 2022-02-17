@@ -63,6 +63,11 @@
   height: 45px;
 }
 
+.submit-form-btn:hover {
+  background-color: rgba(252, 252, 252, 0.8);
+  transition: background-color 0.2s ease;
+}
+
 @media screen and (min-width: 1000px) {
   .contact-form {
     top: 1%;

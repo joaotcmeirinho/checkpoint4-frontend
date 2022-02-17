@@ -1,33 +1,40 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Background from "../../assets/background.webp";
 import "./Login.css";
 import { IconContext } from "react-icons";
 import { BiLogInCircle } from "react-icons/bi";
-import { LoginContext } from "../../Helper/Context";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { loggedIn, setLoggedIn } = useContext(LoginContext);
+  const notify = (message) => {
+    toast.error(message, {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:5001/api/login",
+      await axios.post(
+        "http://localhost:5001/api/admin/login",
         {
           email,
           password,
         },
         { withCredentials: true }
       );
-      sessionStorage.setItem("loggedIn", true);
-      console.log(response);
+      localStorage.setItem("loggedIn", true);
+      window.location.href = "/";
     } catch (err) {
-      console.log(err);
+      notify(err.response.data);
     }
   };
 
@@ -62,7 +69,7 @@ const Login = () => {
           </div>
           <div className="form-element">
             <IconContext.Provider value={{ size: "25px", color: "white" }}>
-              <button type="submit" className="login-btn" type="submit">
+              <button className="login-btn" type="submit">
                 <BiLogInCircle />
               </button>
             </IconContext.Provider>

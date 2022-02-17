@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Background from "../../assets/background.webp";
 import "./Contact.css";
 import { IoSendSharp } from "react-icons/io5";
 import { IconContext } from "react-icons";
-import axios from "axios";
 import SuccessScreen from "../SuccessScreen/SuccessScreen";
 
 const Contact = () => {
@@ -14,17 +14,13 @@ const Contact = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:5001/api/email", {
-        email,
-        matter,
-        text,
-      });
-      setSent(true);
-      console.log(response);
-    } catch (err) {
-      console.log(err);
-    }
+
+    await axios.post("http://localhost:5001/api/email", {
+      email,
+      matter,
+      text,
+    });
+    setSent(true);
   };
 
   return (
@@ -92,7 +88,7 @@ const Contact = () => {
           </form>
         </>
       ) : (
-        <SuccessScreen />
+        <SuccessScreen type="contact" />
       )}
     </div>
   );
