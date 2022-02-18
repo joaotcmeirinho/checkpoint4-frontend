@@ -22,19 +22,14 @@ const EditPopUp = ({ setEditModal, assetId, notify }) => {
   const editAsset = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await axios.put(
-        `http://localhost:5001/api/assets/${assetId}`,
-        { name, quantity, worth },
-        { withCredentials: true }
-      );
+    const response = await axios.put(
+      `http://localhost:5001/api/assets/${assetId}`,
+      { name, quantity, worth },
+      { withCredentials: true }
+    );
 
-      setEditModal(false);
-      notify(response.data);
-      console.log(response);
-    } catch (err) {
-      console.log(err);
-    }
+    setEditModal(false);
+    notify(response.data);
   };
 
   useEffect(() => {

@@ -24,6 +24,8 @@ const RoyalAssets = () => {
   const [editModal, setEditModal] = useState(false);
   const [assetId, setAssetId] = useState("");
 
+  console.log(editModal);
+
   const { loggedIn } = useContext(LoginContext);
 
   const notify = (message) => {
@@ -52,7 +54,7 @@ const RoyalAssets = () => {
 
   useEffect(() => {
     getAssets();
-  }, [assets]);
+  }, [addModal, editModal, deleteModal]);
 
   return (
     <>

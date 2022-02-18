@@ -9,6 +9,7 @@ import { MemberDetails } from "./components/MemberDetails/MemberDetails";
 import Login from "./components/Login/Login";
 import { LoginContext } from "./Helper/Context.js";
 import { useState } from "react";
+import "./index.css";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(
