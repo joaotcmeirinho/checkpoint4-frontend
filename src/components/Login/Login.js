@@ -32,6 +32,7 @@ const Login = () => {
         { withCredentials: true }
       );
       localStorage.setItem("loggedIn", true);
+      cookies.set("token", response.data.token);
       // window.location.href = "/";
     } catch (err) {
       notify(err.response.data);
