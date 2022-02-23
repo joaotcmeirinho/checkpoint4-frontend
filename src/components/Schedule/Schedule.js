@@ -29,11 +29,14 @@ const Schedule = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5001/api/visits", {
-        date,
-        time,
-        email,
-      });
+      const response = await axios.post(
+        "https://winterfell-app.herokuapp.com/api/visits",
+        {
+          date,
+          time,
+          email,
+        }
+      );
       setSuccess(true);
 
       console.log(response);

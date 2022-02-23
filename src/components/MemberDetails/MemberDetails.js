@@ -14,7 +14,7 @@ export const MemberDetails = () => {
 
   const getDetails = async () => {
     const response = await axios.get(
-      `http://localhost:5001/api/family/${memberId}`
+      `https://winterfell-app.herokuapp.com/api/family/${memberId}`
     );
     setMember(response.data[0]);
   };

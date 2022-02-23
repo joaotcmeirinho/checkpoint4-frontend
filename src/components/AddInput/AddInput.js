@@ -11,7 +11,7 @@ const AddInput = ({ setAddModal, notify }) => {
     e.preventDefault();
 
     const response = await axios.post(
-      "http://localhost:5001/api/assets",
+      "https://winterfell-app.herokuapp.com/api/assets",
       {
         name: asset,
         quantity: quantity,

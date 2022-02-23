@@ -35,14 +35,16 @@ const RoyalAssets = () => {
   };
 
   const getAssets = async () => {
-    const response = await axios.get("http://localhost:5001/api/assets");
+    const response = await axios.get(
+      "https://winterfell-app.herokuapp.com/api/assets"
+    );
 
     setAssets(response.data);
   };
 
   const getCategories = async () => {
     const response = await axios.get(
-      "http://localhost:5001/api/assets/categories"
+      "https://winterfell-app.herokuapp.com/api/assets/categories"
     );
 
     setCategories(response.data.slice(1, 4).map((c) => Object.values(c)[0]));

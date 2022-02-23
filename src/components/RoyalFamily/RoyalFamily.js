@@ -8,7 +8,9 @@ const RoyalFamily = () => {
   const [family, setFamily] = useState([]);
 
   const getFamily = async () => {
-    const response = await axios.get("http://localhost:5001/api/family");
+    const response = await axios.get(
+      "https://winterfell-app.herokuapp.com/api/family"
+    );
 
     setFamily(response.data);
   };

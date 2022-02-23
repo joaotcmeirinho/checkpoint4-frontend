@@ -8,7 +8,7 @@ const Hello = () => {
   const logout = async () => {
     axios.defaults.withCredentials = true;
 
-    await axios.post("http://localhost:5001/api/admin/logout");
+    await axios.post("https://winterfell-app.herokuapp.com/api/admin/logout");
     localStorage.clear();
     window.location.href = "/";
   };

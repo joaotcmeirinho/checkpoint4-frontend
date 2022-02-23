@@ -7,7 +7,7 @@ const DeletePopUp = ({ setDeleteModal, assetId, notify }) => {
     e.preventDefault();
 
     const response = await axios.delete(
-      `http://localhost:5001/api/assets/${assetId}`,
+      `https://winterfell-app.herokuapp.com/api/assets/${assetId}`,
       { withCredentials: true }
     );
     setDeleteModal(false);

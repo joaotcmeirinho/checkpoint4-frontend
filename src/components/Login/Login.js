@@ -24,7 +24,7 @@ const Login = () => {
 
     try {
       await axios.post(
-        "http://localhost:5001/api/admin/login",
+        "https://winterfell-app.herokuapp.com/api/admin/login",
         {
           email,
           password,

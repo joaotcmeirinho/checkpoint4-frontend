@@ -15,7 +15,7 @@ const Contact = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:5001/api/email", {
+    await axios.post("https://winterfell-app.herokuapp.com/api/email", {
       email,
       matter,
       text,

@@ -9,7 +9,7 @@ const EditPopUp = ({ setEditModal, assetId, notify }) => {
   const getAssetInfo = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5001/api/assets/${assetId}`
+        `https://winterfell-app.herokuapp.com/api/assets/${assetId}`
       );
       setName(response.data[0].name);
       setQuantity(response.data[0].quantity);
@@ -23,7 +23,7 @@ const EditPopUp = ({ setEditModal, assetId, notify }) => {
     e.preventDefault();
 
     const response = await axios.put(
-      `http://localhost:5001/api/assets/${assetId}`,
+      `https://winterfell-app.herokuapp.com/api/assets/${assetId}`,
       { name, quantity, worth },
       { withCredentials: true }
     );
