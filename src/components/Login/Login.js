@@ -32,7 +32,7 @@ const Login = () => {
         { withCredentials: true }
       );
       localStorage.setItem("loggedIn", true);
-      window.location.href = "/";
+      // window.location.href = "/";
     } catch (err) {
       notify(err.response.data);
     }
